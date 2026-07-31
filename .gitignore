@@ -1,0 +1,13 @@
+# Eseguibili compilati (rigenerabili con `make`)
+versione_processi/frogger
+versione_thread/frogger
+
+# Object file
+*.o
+
+# File di record generato a runtime
+record.txt
+
+# OS / editor
+.DS_Store
+.vscode/

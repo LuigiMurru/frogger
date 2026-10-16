@@ -1,27 +1,27 @@
 # Frogger: Resurrection
 
-Clone testuale di Frogger scritto in C con `ncurses`, realizzato in due versioni che implementano la stessa logica di gioco con due modelli di concorrenza diversi:
+A text-based Frogger clone written in C with `ncurses`, built in two versions that implement the same game logic using two different concurrency models:
 
-- **`versione_processi/`** — architettura multi-processo: coccodrilli, rana, gestore proiettili e gestore granate sono processi separati (`fork`) che comunicano tramite **pipe**.
-- **`versione_thread/`** — architettura multi-thread: gli stessi componenti sono **thread POSIX** che comunicano tramite un buffer condiviso produttore/consumatore, mutex e semafori.
+* `versione_processi/` — multi-process architecture: the crocodiles, the frog, the bullet manager and the grenade manager are separate processes (`fork`) that communicate through pipes.
+* `versione_thread/` — multi-threaded architecture: the same components are POSIX threads that communicate through a shared producer/consumer buffer, mutexes and semaphores.
 
-## Come si gioca
+## How to play
 
-- Frecce direzionali per muovere la rana, obiettivo: raggiungere le 5 tane in alto.
-- Barra spaziatrice per lanciare granate (max. 1 al secondo).
-- `Q` per il menu di pausa.
-- Punteggio: +50 per tana raggiunta, -10 per ogni morte, bonus per il tempo rimanente.
+* Use the arrow keys to move the frog; the goal is to reach the 5 dens at the top.
+* Press the spacebar to throw grenades (max. 1 per second).
+* Press `Q` to open the pause menu.
+* Scoring: +50 for each den reached, -10 for each death, plus a bonus for the remaining time.
 
-## Compilazione ed esecuzione
+## Build and run
 
-Richiede `gcc` e la libreria `ncurses` (`libncurses-dev` su Debian/Ubuntu).
+Requires `gcc` and the `ncurses` library (`libncurses-dev` on Debian/Ubuntu).
 
-```bash
-cd versione_processi   # oppure versione_thread
+```
+cd versione_processi   # or versione_thread
 make
 ./frogger
 ```
 
-## Crediti
+## Credits
 
-Progetto a cura di **Daniele Dessì** e **Luigi Murru**, per il corso di *Sistemi Operativi e Programmazione di Rete*.
+Project by Daniele Dessì and Luigi Murru for the Operating Systems and Network Programming course.
